@@ -1,9 +1,18 @@
+import os
 from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/hello')
-def helloIndex():
-    return 'Hello World from Python Flask!'
+@app.route("/")
+def main():
+    return "Welcome to Ansible Test Web Project"
 
-app.run(host='0.0.0.0', port=80)
+
+@app.route("/test")
+def test():
+    return "Deployed through Ansible"
+
+
+
+if __name__ == "__main__":
+    app.run()
